@@ -3,6 +3,8 @@ package com.forest.level;
 import com.forest.Rectangle;
 import com.forest.level.block.Block;
 import com.forest.level.block.GroundBlock;
+import com.forest.level.block.Sand;
+import com.forest.level.block.Slime;
 import com.forest.level.powerup.DoubleJumpPowerUp;
 import com.forest.level.powerup.SpeedPowerUp;
 import com.forest.menu.GameFinishedOverlay;
@@ -225,7 +227,7 @@ public class Level implements Renderable {
         //Set Background Image
         levelData.backgroundImage = "Ghosts mit Wald.png";
 
-        levelData.blocks.add(new GroundBlock(-100, 0, 2025, 50, "block.png"));
+        levelData.blocks.add(new GroundBlock(-100, 0, 1600, 50, "block.png"));
 
         //Create PowerUp
         levelData.blocks.add(new DoubleJumpPowerUp(200, 100, "Booster Icon JUMP.png"));
@@ -240,6 +242,10 @@ public class Level implements Renderable {
         });
         levelData.spawnPoint = new Rectangle(0, 0, 1, 1);
         levelData.endPoint = new Rectangle(1950, 0, 1, 1000);
+
+        //add new test blocks
+        levelData.blocks.add(new Slime(600, 100, 50, 50, "Slime.png"));
+        levelData.blocks.add(new Slime(1500, 0, 500, 50, "Slime.png"));
 
         return new Level(levelData);
     }
